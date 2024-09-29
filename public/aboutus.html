@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: rgb(253, 252, 239);
+            z-index: 1000;
+            background-repeat: no-repeat;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: rgb(253, 252, 239);
+            font-family: 'Lora', serif;
+        }
+
+        p {
+            margin-bottom: 20px;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 25px;
+            color: white;
+            font-family: 'Lora', serif;
+        }
+
+        .container {
+            max-width: 54%;
+            margin: 50px auto;
+            background-color: #425e18;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding-top: 100px;
+            margin-top: 150px;
+        }
+
+        .last {
+            padding-bottom: 35px;
+        }
+
+        .brand-large {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background-color: #425e18;
+            padding: 10px;
+            color: rgb(253, 252, 239);
+            font-family: 'Lora', serif;
+        }
+
+        .navbar {
+            background-color: #425e18 !important;
+        }
+
+        .navbar-nav {
+            text-align: center;
+        }
+
+        .navbar-nav>li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .navbar-nav>li:last-child {
+            margin-right: 0;
+        }
+
+        .container-fluid {
+            align-items: center;
+            background-color: #425e18;
+        }
+
+        .home-section {
+            height: 100vh;
+            background-color: rgb(253, 252, 239);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .about-section {
+            padding: 60px 20px;
+            background-color: rgb(253, 252, 239);
+        }
+
+        .dashboard-title {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .navbar {
+            background-color: #425e18 !important;
+
+            padding-top: 5px;
+
+            padding-bottom: 5px;
+
+        }
+
+        .navbar-brand {
+            font-size: 1.6rem;
+
+            padding: 0;
+
+        }
+
+        .navbar-nav .nav-link {
+            padding-top: 5px;
+
+            padding-bottom: 5px;
+
+            font-size: 1.2rem;
+
+        }
+
+        .navbar-collapse {
+            margin-top: 5px;
+
+        }
+
+        .footer-bg {
+            background-color: #425e18;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .navbar-nav .nav-link {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 1.2rem;
+            transition: color 0.3s, font-size 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: rgb(253, 252, 239);
+            font-size: 1.44rem;
+        }
+
+        .mwidth {
+            max-height: 17%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar mwidth navbar-expand-lg navbar-light bg-light fixed-top p-4">
+        <div class="container-fluid d-flex flex-column">
+            <a class="navbar-brand brand-large mx-auto" href="/"
+                style="pointer-events: none; font-family: 'Lora'; cursor: pointer;">
+                <span style="font-size: 1.5em; font-weight: bold;">A</span>GRO
+                <span style="font-size: 1.5em; font-weight: bold;">S</span>IGHT
+            </a>
+            <div class="collapse navbar-collapse justify-content-center">
+                <ul class="navbar-nav" style="font-weight: 600; font-size: 1.3rem; color: #000; font-family: 'Lora';">
+                    <li class="nav-item">
+                        <a class="nav-link scroll_" href="/"
+                            style="text-shadow: 1px 1px 2px rgba(105, 104, 104, 0.5);">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll_" href="#"
+                            style="text-shadow: 1px 1px 2px rgba(105, 104, 104, 0.5);">About Us</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link scroll_" href="/"
+                            style="text-shadow: 1px 1px 2px rgba(105, 104, 104, 0.5);">Dashboard</a>
+                    </li>
+
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="photos.html"
+                            style="text-shadow: 1px 1px 2px rgba(105, 104, 104, 0.5);">Photos</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html"
+                            style="text-shadow: 1px 1px 2px rgba(105, 104, 104, 0.5);">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container " style="border-radius: 5px;">
+        <h1 class="">About Us</h1>
+
+        <p>
+            At AgroSight, we are committed to providing a technological solution that helps predict prices of essential
+            agri-horticultural commodities. Our approach is driven by Artificial Intelligence and Machine Learning,
+            ensuring that the predictions we offer are as accurate and timely as possible. We have collaborated with the
+            Ministry of Consumer Affairs of India to solve a key challenge they face: predicting commodity prices to
+            maintain price stability.
+        </p>
+
+        <p>
+            The Ministry of Consumer Affairs is tasked with maintaining stable prices for everyday commodities like
+            grains, vegetables, and pulses. They manage a buffer stock of these essential goods to prevent price spikes.
+            When prices rise, buffer stock is released into the market, increasing supply and stabilizing the market.
+            However, their current algorithms, which use factors such as seasonality, crop estimates, and historical
+            trends, are not always precise in predicting future price fluctuations. This is where AgroSight comes in
+            with a better, more advanced solution.
+        </p>
+
+        <p>
+            Our AI-ML model analyzes a variety of factors such as market trends, historical data, and production
+            estimates, providing accurate price predictions for the upcoming months. With this model, we aim to support
+            the government in making informed decisions about when and how much buffer stock to release, preventing
+            drastic price hikes before they occur.
+        </p>
+
+        <p>
+            In addition to our predictive models, we are also developing a comprehensive web portal with two user
+            levels: citizens and government authorities. Citizens will be able to access past and present price data for
+            major commodities, while government officials will have access to predictive dashboards that suggest whether
+            to release buffer stock, and if so, what percentage of the stock to release. This level of insight enables
+            the Ministry to maintain price stability more efficiently and effectively than ever before.
+        </p>
+
+        <p class="last">
+            Through this solution, AgroSight aims to empower the Ministry of Consumer Affairs to make data-driven
+            decisions in maintaining fair prices for essential goods, ensuring food security for the nation.
+        </p>
+    </div>
+
+    <footer class="footer-bg">
+        <p>&copy; 2023 AgroSight. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

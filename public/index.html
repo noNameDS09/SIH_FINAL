@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .brand-large {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: rgb(247, 249, 221);
+        }
+
+        .navbar {
+            background-color: #425e18 !important;
+        }
+
+        .navbar-nav {
+            text-align: center;
+        }
+
+        .navbar-nav>li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .navbar-nav>li:last-child {
+            margin-right: 0;
+        }
+
+
+        body {
+            padding-top: 80px;
+
+            background-color: rgb(241, 236, 188);
+        }
+
+        .home-section {
+            height: 100vh;
+            background-color: rgb(241, 236, 188);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: center;
+            padding-top: 100px;
+
+        }
+
+        .about-section {
+            padding: 60px 20px;
+            background-color: #425e18;
+            margin-top: 20px;
+        }
+
+        .about-bg {
+            background-color: rgb(241, 236, 188);
+            padding: 40px 30px;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .dashboard-title {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .footer-bg {
+            background-color: #425e18;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .bg-custom {
+            background-color: #425e18;
+            color: rgb(247, 249, 221);
+        }
+
+        .custom-title {
+            font-size: 1.5rem;
+            padding: 5px;
+        }
+
+        .table th,
+        .table td {
+            font-size: 1rem;
+        }
+
+        .navbar {
+            background-color: #425e18 !important;
+
+            padding-top: 5px;
+
+            padding-bottom: 5px;
+
+        }
+
+        .navbar-brand {
+            font-size: 1.6rem;
+
+            padding: 0;
+
+        }
+
+        .navbar-nav .nav-link {
+            padding-top: 5px;
+
+            padding-bottom: 5px;
+
+            font-size: 1.2rem;
+
+        }
+
+        .navbar-collapse {
+            margin-top: 5px;
+
+        }
+
+        section {
+            scroll-margin-top: 100px;
+
+        }
+
+        .container {
+            max-width: 85%;
+
+            margin: 0 auto;
+
+            padding: 0;
+
+        }
+
+        #about {
+            margin-right: 70px;
+            margin-left: 70px;
+        }
+
+        #dashboard {
+            background-color: rgb(241, 236, 188);
+        }
+
+        .navbar-nav .nav-link {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 1.2rem;
+            transition: color 0.3s, font-size 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: rgb(253, 252, 239);
+            font-size: 1.44rem;
+        }
+
+        .mwidth {
+            max-height: auto;
+        }
+
+        @media (max-width: 1000px) and (max-height: 918px) {
+            .navbar {
+                padding: 2rem;
+            }
+
+            .navbar-brand {
+                font-size: 1.2em;
+            }
+
+            .navbar-nav {
+                font-size: 1.1rem;
+            }
+
+            .navbar-nav .nav-link {
+                padding: 0.5rem 1rem;
+            }
+
+            .navbar-collapse {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-item {
+                margin-bottom: 1rem;
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: rgba(0, 0, 0, 1);
+            }
+        }
+
+        .typing-effect {
+            display: block;
+            /* Change to block for separate lines */
+            border-right: 2px solid;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .slide-in-right {
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+        }
+
+        .slide-in-right.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .slide-in-left {
+            transform: translateX(-100%);
+            opacity: 0;
+            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+        }
+
+        .slide-in-left.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 2.5s ease-in-out;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+        }
+    </style>
+
+    </style>
+</head>
+
+<body style="background-color: rgb(253, 252, 239);">
+    <!-- Fixed Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-4">
+        <div class="container-fluid d-flex flex-column">
+            <a class="navbar-brand brand-large mx-auto" href="/"
+                style="pointer-events: none; font-family: 'Lora'; cursor: pointer;">
+                <span style="font-size: 1.5em; font-weight: bold;">A</span>GRO
+                <span style="font-size: 1.5em; font-weight: bold;">S</span>IGHT
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav" style="font-weight: 600; font-size: 1.3rem; color: #000; font-family: 'Lora';">
+                    <li class="nav-item">
+                        <a class="nav-link scroll_" href="#home"
+                            style="text-shadow: 1px 1px 2px rgba(105, 104, 104, 0.5);">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll_" href="#about"
+                            style="text-shadow: 1px 1px 2px rgba(105, 104, 104, 0.5);">About Us</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link scroll_" href="#dashboard"
+                            style="text-shadow: 1px 1px 2px rgba(105, 104, 104, 0.5);">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html"
+                            style="text-shadow: 1px 1px 2px rgba(105, 104, 104, 0.5);">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section overflow-auto">
+        <div class="container text-center">
+            <h1 class="fade-in" id="welcome-text" style="font-weight: 600; font-family: 'lora'; font-size: 30px;">
+                WELCOME TO</h1>
+            <img src="./assets/AGROSITE1.png" alt="AgroSight Image" class="img-fluid fade-in" id="main-image"
+                style="max-width: 20%; height: auto; background: none;">
+
+            <!-- Buttons Section -->
+            <div class="container" style="margin-top: 50px;">
+                <div>
+                    <a href="current_previous.html" class="btn pricecurr slide-in-left" id="button1"
+                        style="background-color: #3a5315; color:rgb(253, 252, 239); font-family: lora; padding: 10px; font-size: x-large;">Current
+                        and Previous Prices</a>
+                </div>
+                <div class="mt-4">
+                    <a href="login.html" class="btn slide-in-right" id="button2"
+                        style="background-color: #3a5315; color: rgb(253, 252, 239); font-family: lora; padding: 10px; font-size: x-large;">Future
+                        Prices</a>
+                </div>
+            </div>
+            <div class="mt-5">
+                <p class="typing-effect" id="typed-text-line1" style="color: #3a5315; font-weight: 600; background-color:rgb(241, 236, 188) ;"></p>
+                <p class="typing-effect" id="typed-text-line2" style="color: #3a5315; font-weight: 600;background-color: rgb(241, 236, 188);"></p>
+            </div>
+
+            <!-- Descriptive Paragraph -->
+            <p class="des mt-5 text-wrap overflow-auto" style="color: #555; font-size: 1rem;">
+                Our "Current and Previous Price" feature allows you to quickly view the latest prices of various
+                agricultural commodities, helping you make informed decisions. <br />
+                By clicking on "Future Prices," you will be directed to a login page, as accessing these insights
+                requires a secure account. <br>
+                Once logged in (Admins/Government Authorities only), you will gain access to detailed forecasts and
+                price predictions that can assist you <br>in planning your purchases and sales more effectively.
+            </p>
+        </div>
+    </section>
+    <!-- Dashboard Section -->
+
+    <section id="about" class="about-section m-0 overflow-auto">
+        <div class="text-center about-bg">
+            <h2 style="color: #3a5315; font-weight: bold; font-family: 'lora';">About Us</h2>
+            <p>At AgroSight, we are committed to providing a technological solution that helps predict prices of
+                essential agri-horticultural commodities. Our approach is driven by Artificial Intelligence and Machine
+                Learning, ensuring that the predictions we offer are as accurate and timely as possible. We have
+                collaborated with the Ministry of Consumer Affairs of India to solve a key challenge they face:
+                predicting commodity prices to maintain price stability...</p>
+            <a href="aboutus.html" class="btn mt-3" style="background-color: #3a5315; color: rgb(253, 252, 239);">Read
+                More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="dashboard" class="fade-in dashboard-section m-0 p-5">
+        <main class="container mt-4">
+            <h2 class="dashboard-title mt-1" style="font-weight: bold; font-family: 'lora';">Dashboard</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 p-3">
+                    <div class="bg-custom border rounded">
+                        <h3 class="h6 text-center custom-title" style="font-family: 'lora';"><strong>Grains &
+                                Pulses</strong></h3>
+                        <div class="table-responsive" style="font-size: 12px;">
+                            <table class="table table-borderless text-light">
+                                <thead>
+                                    <tr class="bg-secondary text-white">
+                                        <th scope="col">Commodity</th>
+                                        <th scope="col">Prices</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Rice</td>
+                                        <td>43.44</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wheat</td>
+                                        <td>31.06</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Atta (Wheat)</td>
+                                        <td>35.91</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gram Dal</td>
+                                        <td>93.59</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tur/Arhar Dal</td>
+                                        <td>163.86</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Urad Dal</td>
+                                        <td>124.73</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Moong Dal</td>
+                                        <td>115.76</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Masoor Dal</td>
+                                        <td>89.53</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 p-3">
+                    <div class="bg-custom border rounded">
+                        <h3 class="h6 text-center custom-title" style="font-family: 'lora';"><strong>Vegetables</strong>
+                        </h3>
+                        <div class="table-responsive" style="font-size: 12px;">
+                            <table class="table table-borderless text-light">
+                                <thead>
+                                    <tr class="bg-secondary text-white">
+                                        <th scope="col">Commodity</th>
+                                        <th scope="col">Prices</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Potato</td>
+                                        <td>25.96</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Onion</td>
+                                        <td>48.07</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tomato</td>
+                                        <td>39.67</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 p-3">
+                    <div class="bg-custom border rounded">
+                        <h3 class="h6 text-center custom-title" style="font-family: 'lora';"><strong>Fruits</strong>
+                        </h3>
+                        <div class="table-responsive" style="font-size: 12px;">
+                            <table class="table table-borderless text-light">
+                                <thead>
+                                    <tr class="bg-secondary text-white">
+                                        <th scope="col">Commodity</th>
+                                        <th scope="col">Prices</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Banana</td>
+                                        <td>44.64</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Apple</td>
+                                        <td>109.89</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Orange</td>
+                                        <td>66.54</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 p-3">
+                    <div class="bg-custom border rounded">
+                        <h3 class="h6 text-center custom-title " style="font-family: 'lora';"><strong>Oils</strong></h3>
+                        <div class="table-responsive" style="font-size: 12px;">
+                            <table class="table table-borderless text-light">
+                                <thead>
+                                    <tr class="bg-secondary text-white">
+                                        <th scope="col">Commodity</th>
+                                        <th scope="col">Prices</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Groundnut Oil (Packed)</td>
+                                        <td>188.08</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mustard Oil (Packed)</td>
+                                        <td>152.71</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vanaspati (Packed)</td>
+                                        <td>130.93</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Soya Oil (Packed)</td>
+                                        <td>136.14</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sunflower Oil (Packed)</td>
+                                        <td>137.32</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Palm Oil (Packed)</td>
+                                        <td>114.94</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bg">
+        <p>&copy; 2024 AgroSight. All Rights Reserved.</p>
+    </footer>
+    <script>
+        window.addEventListener('load', () => {
+            const welcomeText = document.getElementById('welcome-text');
+            const image = document.getElementById('main-image');
+            setTimeout(() => {
+                welcomeText.classList.add('show');
+                image.classList.add('show');
+                document.getElementById('button1').classList.add('show');
+                document.getElementById('button2').classList.add('show');
+            }, 500); 
+        });
+
+        const lines = [
+            "Click 'Current and Previous Price' to see immediate prices for essential commodities based on real-time data.",
+            "To access future prices and predictions based on market trends, please log in first."
+        ];
+        const typedTextElement1 = document.getElementById('typed-text-line1');
+        const typedTextElement2 = document.getElementById('typed-text-line2');
+        let index1 = 0;
+        let index2 = 0;
+        const typingDuration = 3000; 
+        const typingSpeed1 = typingDuration / lines[0].length; 
+        const typingSpeed2 = typingDuration / lines[1].length;
+
+        function type(lineIndex, typedElement, speed) {
+            if (lineIndex < lines.length) {
+                const currentLine = lines[lineIndex];
+                if (typedElement === typedTextElement1 && index1 < currentLine.length) {
+                    typedElement.innerHTML += currentLine.charAt(index1);
+                    index1++;
+                    setTimeout(() => type(0, typedTextElement1, typingSpeed1), speed);
+                } else if (typedElement === typedTextElement2 && index2 < currentLine.length) {
+                    typedElement.innerHTML += currentLine.charAt(index2);
+                    index2++;
+                    setTimeout(() => type(1, typedTextElement2, typingSpeed2), speed);
+                } else if (lineIndex === 0) {
+                    setTimeout(() => type(1, typedTextElement2, typingSpeed2), 500); 
+                }
+            }
+        }
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                type(0, typedTextElement1, typingSpeed1);
+            }, 500);
+        });
+        document.querySelectorAll('.scroll_').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+            const dashboardSection = document.getElementById('dashboard');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        dashboardSection.classList.add('show');
+                    }
+                });
+            });
+
+            observer.observe(dashboardSection);
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz4fnFO9gybBogGzYol7HAf1vF6iJXf6PC9ew/sB1hb3BIebhndOWCKecq"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-djWEFD0yDksHY0rExJo9rvWbjr0sAlulFfWM1J3y/fbxtEmmP55Sl/uBFV8GA7qP"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
