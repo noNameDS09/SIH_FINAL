@@ -9,3 +9,7 @@ npm i bcrypt body-parser chart.js config cookie-parser cors csv-parser debug exp
 ```bash
 node server.js
 ```
+#### or
+```bash
+nodemon server.js
+```
