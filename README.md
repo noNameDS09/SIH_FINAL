@@ -1,5 +1,5 @@
 # SIH_FINAL
-
+### Clone the repository first
 ### Download the required dependencies by following command
 ```bash
 npm install
