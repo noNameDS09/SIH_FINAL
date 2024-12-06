@@ -2,7 +2,7 @@
 
 ### Download the required dependencies by following command
 ```bash
-npm i bcrypt body-parser chart.js config cookie-parser cors csv-parser debug express mongoose
+npm install
 ```
 
 ### Run the server by 
